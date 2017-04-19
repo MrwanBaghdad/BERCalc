@@ -99,7 +99,7 @@ if strcmp(get(handles.SNR_value,'string'), 'All')
        txPower = mean(txSequence.^2);
        
        % Compute noise based on the SNR
-       noise = sqrt(txPower/(2*SNR_values(index,1))*(randn(size(txSequence))+1j*randn(size(txSequence))));
+       noise = sqrt( txPower / (2 * SNR_values(index,1) ) ) * ( randn(size(txSequence)) + 1j randn(size(txSequence)) );
        
        % Compute the received signal
        rxSequence = txSequence + noise;
